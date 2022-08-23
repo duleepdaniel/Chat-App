@@ -2,7 +2,7 @@
   <%= form_with model: [@single_room, @message],
     data: { 
       controller: "reset-form", 
-      action: "ajax:success->reset-form#reset"
+      action: "turbo:submit-end->reset-form#reset"
     } do |f| %>
     <%= f.text_field :content, id: 'chat-text', class: "form-control msg-content", autocomplete: 'off' %>
     <%= f.submit data: { disable_with: false }, class: "btn btn-primary" %>
