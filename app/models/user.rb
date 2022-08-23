@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   scope :all_except, ->(user) { where.not(id: user) }
+  has_many :messages
 
   after_create_commit { broadcast_append_to "users" }
+
+  def username
+    email.split('@').first.capitalize
+  end
 end

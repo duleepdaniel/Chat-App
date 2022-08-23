@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-2">
-    <h5> Hi <%= @current_user.email %> </h5>
+    <h5> Hi <%= @current_user.username %> </h5>
     <%= link_to "Log out", destroy_user_session_path, class: 'btn btn-danger', data: { turbo_method: :delete } %>
 
     <h4> Users </h4>
