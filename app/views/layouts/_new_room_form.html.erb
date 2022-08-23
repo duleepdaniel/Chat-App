@@ -1,0 +1,7 @@
+<%= form_with(model: @room, class: "d-flex", data: { 
+    controller: "reset-form", 
+    action: "ajax:success->reset-form#reset"
+  } ) do |f| %>
+  <%= f.text_field :name, class: "form-control", autocomplete: 'off' %>
+  <%= f.submit data: { disable_with: false } %>
+<% end %>
